@@ -1,0 +1,35 @@
+variables:
+
+traindta: X_train.txt
+
+trainlabel: y_train.txt
+
+trainsubject: subject_train.txt
+
+testdta: X_test.txt
+
+testlabel: y_test.txt
+
+testsubject: ubject_test.txt
+
+mergedta: merged table of training and the testing dataset
+
+mergelabel : merged label table
+
+mergesubject : merged subject table
+
+
+activity: activity_labels.txt
+
+mergelabel: the label of the merged dataset
+
+cleaneddta : cleaned data set
+
+frow: vector of the first row of the cleaned data set
+
+a: length of the frow vector
+
+meandta: data frame of the 2nd data set
+b: means of the i_th columns
+
+finaldta: merge of the meandta and the cleanddta
