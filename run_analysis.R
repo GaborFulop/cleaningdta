@@ -7,7 +7,7 @@
  testdta <- read.table("X_test.txt")
  testlabel <- read.table("y_test.txt")  
  testsubject <- read.table("subject_test.txt")
-  # merging
+  # merging with rbind
  mergedta <- rbind(traindta, testdta)
  mergelabel <- rbind(trainlabel, testlabel)
  mergesubject <- rbind(trainsubject, testsubject)
@@ -23,7 +23,7 @@
   # reading the activity_labels
  activity <- read.table("activity_labels.txt")
  activity[, 2] <- tolower(gsub("_", "", activity[, 2]))
-  # naming
+  # naming the activities
  substr(activity[2, 2], 8, 8) <- toupper(substr(activity[2, 2], 8, 8))
  substr(activity[3, 2], 8, 8) <- toupper(substr(activity[3, 2], 8, 8))
  activitylabel <- activity[mergelabel[, 1], 2]
@@ -38,7 +38,7 @@
  write.table(cleaneddta, "merged_data.txt")
  
  # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-  #preparing a data frame in which the means will be entered
+  #preparing a data frame for the means 
  frow<-mergedta[1,]
  a<-length(frow)
  meandta<- data.frame(matrix(NA, nrow=1, ncol=a))
